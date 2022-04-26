@@ -1,25 +1,25 @@
-const Paleta = require('../models/Paleta');
+const Paletas = require('../models/Paleta');
 
 const findPaletasService = async () => {
-  const paletas = await Paleta.find();
-  return paletas;
+  const allpaletas = await Paletas.find();
+  return allpaletas;
 };
   
   const findPaletaByIdService = (id) => {
-    return paletas.find((paleta) => paleta.id == id);
+    return Paletas.find((paleta) => paleta.id == id);
   };
   
   const createPaletaService = async (newPaleta) => {
-    const paletaCriada = await Paleta.create(newPaleta)
-    return paletaCriada;
+    const paletaCreated = await Paletas.create(newPaleta)
+    return paletaCreated;
   };
   const updatePaletaService = async (id, paletaEdited) => {
-    const paletaAtualizada = await Paleta.findByIdAndUpdate(id, paletaEdited);
-    return paletaAtualizada;
+    const paletaUpdate = await Paletas.findByIdAndUpdate(id, paletaEdited);
+    return paletaUpdate;
   };
 
   const deletePaletaService = async (id) => {
-    return await Paleta.findByIdAndDelete(id);
+    return await Paletas.findByIdAndDelete(id);
   };
 
   module.exports = {

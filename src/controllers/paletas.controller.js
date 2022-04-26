@@ -1,7 +1,7 @@
-const paletasService = require('../services/paleta.service');
+const paletasService = require('../services/paletas.service');
 
 const findAllPaletasController = async (req, res) => {
-  const allPaletas = await paletasService.findAllPaletasService();
+  const allPaletas = await paletasService.findPaletasService();
   if (allPaletas.length == 0) {
     return res
       .status(404)
@@ -12,7 +12,7 @@ const findAllPaletasController = async (req, res) => {
 
 const findByIdPaletaController = async (req, res) => {
   const idParam = req.params.id;
-  const chosenPaleta = await paletasService.findByIdPaletaService(idParam);
+  const chosenPaleta = await paletasService.findPaletaByIdService(idParam);
   if (!chosenPaleta) {
     return res.status(404).send({ message: 'Paleta não encontrada!' });
   }
