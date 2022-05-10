@@ -17,7 +17,7 @@
     {
       "url": "https://api-elgeladon-modulofullstack.onrender.com/paletas",
       "description": "API de produção Render"
-    }
+    },
     {
       "url": "https://api-elgeladon.herokuapp.com/paletas",
       "description": "API de produção"
