@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const remoteUrl =
-  'mongodb+srv://root:Admin123@el-geladon-server.3nqts.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
+  'mongodb+srv://root:admin@el-geladon-server.3nqts.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
 const localUrl =
   'mongodb+srv://root:Admin123@cardapio-el-geladon.9xneq.mongodb.net/myFirstDatabase?retryWrites=true&w=majorityT';
 
