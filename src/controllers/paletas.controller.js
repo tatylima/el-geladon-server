@@ -1,7 +1,8 @@
+const mongoose = require('mongoose');
 const paletasService = require('../services/paletas.service');
 
 const findAllPaletasController = async (req, res) => {
-  const allPaletas = await paletasService.findPaletasService();
+  const allPaletas = await paletasService.findAllPaletasService();
   if (allPaletas.length == 0) {
     return res
       .status(404)
@@ -10,7 +11,7 @@ const findAllPaletasController = async (req, res) => {
   res.send(allPaletas);
 };
 
-const findByIdPaletaController = async (req, res) => {
+const findPaletaByIdController = async (req, res) => {
   const idParam = req.params.id;
   const chosenPaleta = await paletasService.findPaletaByIdService(idParam);
   if (!chosenPaleta) {
@@ -43,7 +44,7 @@ const deletePaletaController = async (req, res) => {
 
 module.exports = {
   findAllPaletasController,
-  findByIdPaletaController,
+  findPaletaByIdController,
   createPaletaController,
   updatePaletaController,
   deletePaletaController,

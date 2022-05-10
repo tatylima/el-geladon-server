@@ -24,7 +24,22 @@ const validObjectBody = (req, res, next) => {
   next();
 };
 
+const validObjectBodyCarrinho = (req, res, next) => {
+  const carrinho = req.body;
+
+  carrinho.forEach((item) => {
+    if (!item || !item.paletaId || !item.quantidade) {
+      return res
+        .status(400)
+        .send({ message: 'Envie o todos campos das paletas!' });
+    }
+  });
+
+  next();
+};
+
 module.exports = {
   validId,
   validObjectBody,
+  validObjectBodyCarrinho
 };
